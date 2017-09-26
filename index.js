@@ -54,5 +54,21 @@
     }
   };
 
+  /** Вставляем html во внутрь нод */
+  cssDom.prototype.addHtml = function(str) {
+    let elem = this;
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].innerHTML = str;
+    }
+  };
+
+  /** Удаляем ноды из документа */
+  cssDom.prototype.delete = function() {
+    let elem = this;
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].parentNode.removeChild(elem[i]);
+    }
+  };
+
   return cssDom;
 });
